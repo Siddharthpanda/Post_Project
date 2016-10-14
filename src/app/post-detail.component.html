@@ -1,0 +1,14 @@
+<div *ngIf="post">
+  <h2>{{post.name}} details!</h2>
+  <div>
+    <label>id: </label>{{post.id}}</div>
+  <div>
+    <label>Posted By: </label>
+    <input [(ngModel)]="post.name" placeholder="name" />
+    <label>Title: </label>
+    <input [(ngModel)]="post.title" placeholder="title" /><br><br>
+    <label>Description: </label>
+    <textarea [(ngModel)]="post.desc"></textarea>
+  </div>
+  
+</div>
