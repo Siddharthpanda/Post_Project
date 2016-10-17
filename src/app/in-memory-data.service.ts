@@ -13,6 +13,12 @@ export class InMemoryDataService implements InMemoryDbService {
     name: 'xyz',
     title: 'films',
     desc: 'ashflkfasg'
+  },
+  {
+    id: 3,
+    name: 'Satya',
+    title: 'songs',
+    desc: 'fsdnm,sgm,sdgm,'
   }
 ];
     return {posts};

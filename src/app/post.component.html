@@ -4,15 +4,21 @@
 </h2>
 <h3>
 <div>
-<ul>
-  <li *ngFor="let post of posts">{{post.title}}   by <small>{{post.name}}</small>
-<button (click)="onSelect(post)">view/Edit</button>
-<button (click)="onDelete(post)">Delete</button></li>
-</ul>
+
+  <table class="table table-hover">
+    <tr *ngFor="let post of posts"><td>
+     <div> {{post.title}}   by <small>{{post.name}}</small></div>
+    </td><td>
+<button (click)="onSelect(post)" class="btn btn-info btn-sm" data-toggle="tooltip" title="Show Item"><span class="glyphicon glyphicon-th-list">view</span></button>
+<button (click)="onDelete(post); $event.stopPropagation()" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Delete Item"><span class="glyphicon glyphicon-remove">remove</span></button></td>
+  
+  </tr>
+</table>
+
 </div>
-<hr>
+
 <!-- Show selected post if exist -->
-<div *ngIf="selectedPost">
+<!--<div *ngIf="selectedPost">
 <h2>
     {{selectedPost.title }}--Posted By :-{{selectedPost.id}}
     <br>
@@ -20,7 +26,7 @@
     {{selectedPost.desc}}
   </h2>
   <button (click)="gotoDetail()">Edit Details</button> </div>
-<hr>
+<hr>-->
 </h3>
 
 

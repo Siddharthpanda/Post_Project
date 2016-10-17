@@ -1,0 +1,18 @@
+/posts -> show a collection of posts
+/posts/:id -> show a single post
+/posts/new -> show a new post form
+/posts/:id/edit -> shows a edit post form
+Boostrap 3.x
+posts
+  - index.ts
+  - show.ts
+  - new.ts
+  - edit.ts
+Angular 1.5
+Comments
+
+Angular 1.5 learning tips
+- Building form validations
+- $q Promise
+- Filters
+

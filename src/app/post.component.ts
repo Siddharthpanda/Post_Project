@@ -27,7 +27,7 @@ export class PostComponent implements OnInit {
   
   posts: Post[];
   selectedPost: Post;
-
+  id: number;
   constructor(private router: Router,private postService: PostService){}
   getPosts(): void {
     this.postService.getPosts().then(posts => this.posts = posts);
@@ -38,13 +38,24 @@ export class PostComponent implements OnInit {
   }
   onSelect(post: Post): void{
     this.selectedPost = post;
-    //console.log(this.selsectedPost);
+    //this.router.navigate(['/detail',post.id]);
+    //console.log(this.selectedPost);
+     this.id = Number(this.selectedPost.id);
+     //console.log(this.selectedPost.id);
+     //console.log(this.id);
+    this.router.navigate(['/detail',this.id]);
   }
-  gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedPost.id]);
-  }
+  // gotoDetail(): void {
+  //   this.router.navigate(['/detail', this.selectedPost.id]);
+  // }
   onDelete(post: Post): void{
-    this.selectedPost = post;
-    //console.log("deleted"+  this.selsectedPost);
+    if(confirm("Are you sure to delete this ?")){
+    this.postService.delete(post.id)
+                    .then(() => {
+                      this.posts = this.posts.filter(p => p !== post);
+        if (this.selectedPost === post) { this.selectedPost = null; }
+        this.router.navigate(['/allItem']);
+      });
+  }
   }
 }

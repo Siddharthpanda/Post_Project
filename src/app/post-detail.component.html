@@ -1,14 +1,37 @@
-<div *ngIf="post">
-  <h2>{{post.name}} details!</h2>
-  <div>
-    <label>id: </label>{{post.id}}</div>
-  <div>
+<div *ngIf="post"> 
+<h2>
+  <hr> 
+    {{post.title }}<small>__Posted By : <strong>{{post.name}}</strong></small>
+    <br>
+    <br>
+    <p class="well">
+    {{post.desc}}
+  </p>
+  </h2>
+  
+  <button (click)="select(post)" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Edit Item"><span class="glyphicon glyphicon-pencil">Edit </span></button>
+  <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+  <button (click)="deletePost(post); $event.stopPropagation()" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Delete Item"><span class="glyphicon glyphicon-remove">Delete</span></button>
+  <hr>
+  </div>
+
+
+
+<div *ngIf="selectedPost"><div>
+  <h3>Edit Details with
+    <small><label> id: </label>{{selectedPost.id}}</small></h3></div>
+  
+  <div class="form-group">
     <label>Posted By: </label>
-    <input [(ngModel)]="post.name" placeholder="name" />
+    <input [(ngModel)]="selectedPost.name" placeholder="name" class="form-control"/>
+
     <label>Title: </label>
-    <input [(ngModel)]="post.title" placeholder="title" /><br><br>
+    <input [(ngModel)]="selectedPost.title" placeholder="title" class="form-control"/>
+
     <label>Description: </label>
-    <textarea [(ngModel)]="post.desc"></textarea>
+    <textarea [(ngModel)]="selectedPost.desc" class="form-control" rows="3"></textarea><br>
+    <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+    <button (click)="updatePost(post)" class="btn btn-success btn-sm" data-toggle="tooltip" title="Update Item"><span class="glyphicon glyphicon-ok">Update</span></button>
   </div>
   
 </div>
