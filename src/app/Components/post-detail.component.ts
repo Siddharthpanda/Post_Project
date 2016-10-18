@@ -3,13 +3,13 @@ import { Component, OnInit }      from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Router } from '@angular/router';
 
-import { Post } from './post.model';
-import { PostService }  from './post.service';
+import { Post } from '../resources/post.model';
+import { PostService }  from '../resources/post.service';
 
 
 @Component({
     selector: 'post-detail',
-    templateUrl: 'post-detail.component.html',
+    templateUrl: '../Pages/post-detail.component.html',
     styles: [`p{
       text-indent: 1em;
       font-size: .9em;

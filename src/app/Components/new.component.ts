@@ -1,14 +1,14 @@
 import { ANY_STATE } from '@angular/core/src/animation/animation_constants';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Post } from './post.model';
-import { PostService } from './post.service';
+import { Post } from '../resources/post.model';
+import { PostService } from '../resources/post.service';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
 selector: 'new',
-templateUrl: 'new.component.html'
+templateUrl: '../Pages/new.component.html'
 })
 
 

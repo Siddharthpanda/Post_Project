@@ -3,6 +3,7 @@ import { Post } from './post.model';
 //import { POSTS } from './posts.data';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+
 @Injectable()
 export class PostService{
     // For getting all posts

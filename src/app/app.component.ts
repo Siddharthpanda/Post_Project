@@ -7,14 +7,14 @@ template: `
       <div class="row back">
     <h1 class="text-center">{{title}}</h1>
     </div>
-    <br> <br>
+    <br> 
     <div class="row">
-      <div class="col-sm-4 mid"></div>
-      <div class="col-sm-4">
-          
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 mid">
+          <br>
     <nav>
-      <a routerLink="/allItem" routerLinkActive="active" class="btn btn-primary">Show All Feedback</a>
-      <a routerLink="post/new" routerLinkActive="active" class="pull-right"><span class="glyphicon glyphicon-plus">Add_Feedback</span></a>
+      <a routerLink="/allItem" routerLinkActive="active" class="btn btn-primary"> Show All Feedback</a>
+      <a routerLink="post/new" routerLinkActive="active" class="pull-right text-warning"><span class="glyphicon glyphicon-plus" >Add_Feedback</span></a>
     </nav>
     <router-outlet></router-outlet>
       <hr>
@@ -27,7 +27,8 @@ template: `
     background-color: lightblue;
   }
   div.mid{
-    background-color: white;
+    border-radius: 15px 0 15px 0;
+    background-color: #eee;
   }
   `]
 })

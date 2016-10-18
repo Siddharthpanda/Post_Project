@@ -1,17 +1,23 @@
 <div *ngIf="post"> 
 <h2>
   <hr> 
-    {{post.title }}<small>__Posted By : <strong>{{post.name}}</strong></small>
+    {{post.title }}
     <br>
     <br>
+    <blockquote>
     <p class="well">
     {{post.desc}}
   </p>
+  <footer>by, {{post.name}}</footer>
+  </blockquote>
   </h2>
+  <div class="row">
+    <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+  <button (click)="select(post)" class="btn btn-primary btn-sm col-sm-3 col-xs-3 col-md-3 col-lg-3" data-toggle="tooltip" title="Edit Item"><span class="glyphicon glyphicon-pencil" > Edit </span></button>
+     <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
+  <button (click)="deletePost(post); $event.stopPropagation()" class="btn btn-warning btn-sm col-sm-3 col-xs-3 col-md-3 col-lg-3" data-toggle="tooltip" title="Delete Item"><span class="glyphicon glyphicon-remove"> Delete</span></button>
   
-  <button (click)="select(post)" class="btn btn-primary btn-sm" data-toggle="tooltip" title="Edit Item"><span class="glyphicon glyphicon-pencil">Edit </span></button>
-  <div class="col-sm-1 col-xs-1 col-md-1 col-lg-1"></div>
-  <button (click)="deletePost(post); $event.stopPropagation()" class="btn btn-warning btn-sm" data-toggle="tooltip" title="Delete Item"><span class="glyphicon glyphicon-remove">Delete</span></button>
+  </div>
   <hr>
   </div>
 

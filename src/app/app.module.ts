@@ -5,13 +5,13 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PostDetailComponent } from './post-detail.component';
-import { PostComponent } from './post.component';
-import { NewComponent } from './new.component';
-import { PostService } from './post.service';
+import { PostDetailComponent } from './Components/post-detail.component';
+import { PostComponent } from './Components/post.component';
+import { NewComponent } from './Components/new.component';
+import { PostService } from './resources/post.service';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { InMemoryDataService }  from './resources/in-memory-data.service';
 
 @NgModule({
   declarations: [
